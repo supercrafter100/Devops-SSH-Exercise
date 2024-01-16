@@ -101,7 +101,7 @@ export default function Home() {
                             <p className='text-2xl font-bold'>
                                 Gebruikersnaam:{' '}
                                 <span className='font-normal'>
-                                    {session.data.user?.name}
+                                    {session.data.user?.name?.replace(/ /g, '')}
                                 </span>
                             </p>
                         </div>

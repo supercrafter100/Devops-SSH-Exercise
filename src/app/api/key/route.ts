@@ -14,12 +14,13 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
     const body = await req.json();
     if (!body.key)
         return NextResponse.json({ error: 'No key provided' }, { status: 400 });
-    const response = await addKey(body.key, session.user!.name!).catch(
-        (err) => {
-            console.log(err);
-            return false;
-        }
-    );
+    const response = await addKey(
+        body.key,
+        session.user!.name!.replace(/ /g, '')
+    ).catch((err) => {
+        console.log(err);
+        return false;
+    });
     if (response) {
         return NextResponse.json({ success: true }, { status: 200 });
     }
@@ -35,6 +36,6 @@ export const DELETE = async (req: NextRequest, res: NextResponse) => {
         return NextResponse.json({ error: 'Not logged in' }, { status: 401 });
     }
 
-    await deleteKey(session.user!.name!);
+    await deleteKey(session.user!.name!.replace(/ /g, ''));
     return NextResponse.json({ success: true }, { status: 200 });
 };
