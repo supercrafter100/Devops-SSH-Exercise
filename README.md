@@ -2,6 +2,8 @@
 
 Dit is een website die gebaseerd is op het oefenexamen van devops 2023-2024 om de mogelijheid te krijgen om voor het examen nog eens te oefenen van keys aan te maken, toevoegen aan de machine en te connecteren. Het is gemaakt met `Next.JS`, `TailwindCSS` en `next-auth` voor authenticatie.
 
+![image](https://i.imgur.com/sCZ3rO3.png)
+
 # Werking
 
 ## Voor de gebruker
